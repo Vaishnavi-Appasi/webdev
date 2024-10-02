@@ -1,0 +1,43 @@
+.menubar
+{
+    width:85%;
+    margin:auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menubar ul{
+    text-indent: 20px;
+    font-size: 25px;
+}
+.menubar ul li{
+    position: relative;
+    left: 800px;
+    list-style:none;
+    display:inline-flex;
+    margin: auto;
+}
+.menubar ul li a
+{
+    text-decoration: none; 
+}
+.category{
+    color:rgb(23, 20, 20);
+    text-align:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.types{
+    display:inline-block;
+    display:flex;
+    justify-content:space-evenly;
+}
+img{
+    width:180px;
+    height:180px;
+}
+.product{
+    display:flex;
+    display:block;
+    text-align:center;
+}

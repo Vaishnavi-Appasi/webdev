@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript Summarizer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url(https://th.bing.com/th/id/OIP.GFr3LWU86VoxNEfOrCG_2AHaEc?w=626&h=376&rs=1&pid=ImgDetMain);
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .menu {
+            width: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu h1 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu ul li {
+            margin: 0;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .box {
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            margin-top: 40px; /* Adjust this to move the form closer to the top */
+            margin-left: auto; /* Align to the right */
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            color: #ccc;
+            pointer-events: none;
+            font-size: 1.2rem;
+        }
+
+        .textbox {
+            width: 100%;
+            padding: 20px;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 1rem;
+            height: 100px;
+            resize: none;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: bolder;
+            font-size: 1.5rem;
+            background: rgb(95, 29, 29);
+            color: aliceblue;
+            cursor: pointer;
+            border: none;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .menu h1 {
+                font-size: 2rem;
+            }
+
+            .menu ul li a {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu ul {
+                gap: 10px;
+            }
+
+            .menu ul li a {
+                font-size: 0.9rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+
+            .box {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="menu">
+            <h1>YouTube Transcript Summarizer</h1>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/yts.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/templates/aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="box">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <textarea id="link" name="link" class="textbox" placeholder="Paste your link here" required></textarea>
+                </div>
+                <div class="button-group">
+                    <button type="submit" name="button" value="transcript">Transcript</button>
+                    <button type="submit" name="button" value="summary">Summary</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

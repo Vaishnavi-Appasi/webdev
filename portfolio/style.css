@@ -1,0 +1,367 @@
+*{
+    margin:5px;
+    padding:1px;
+    background-color: black;
+}
+body
+{
+    color: aliceblue;
+}
+section
+{
+    margin:10px;
+    padding:11px;
+    height: 100vh;
+    scroll-behavior: smooth;
+    scroll-snap-stop: always;
+    background-image:url(bg.png);
+    background-position: center;
+    background-size: cover;
+}
+nav{
+    background: none;
+}
+.navlist{
+    display: flex;
+    background: none;
+}
+ul{
+    display: flex;
+    text-indent:20px;
+    font-size: 20px;
+    background: none;
+    position: relative;
+    padding-left: 750px
+}
+.navlist h1{
+    font-size: 40px;
+    color: ghostwhite;
+    background: none;
+}
+ul li{
+    position: relative;
+    list-style:none;
+    display:inline-flex;
+    margin: auto;
+    background: none;
+}
+ul li a{
+    color: ghostwhite;
+    text-decoration:none;
+    background: none;
+}
+ul li a:active
+{
+    color:rgb(20, 225, 225);
+}
+.home
+{
+    position:relative;
+    top:75px;
+    background: none;
+    display:inline-flex;
+}
+.home-details
+{
+    position: relative;
+    left:100px;
+    background: none;
+    font-family: sans-serif;
+}
+.home-details h1
+{
+    font-size:40px ;
+    background: none;
+}
+button
+{
+    width: 250px;
+    height:70px;
+    color:ghostwhite;
+    border-radius: 6%;
+    border-color: rgb(20, 225, 225);
+    font-size: 30px;
+    background: none;
+}
+a{
+    background: none;
+}
+button:active
+{
+    background: rgb(20, 225, 225);
+}
+.photo{
+    background: none;
+}
+.photo img
+{
+    position: relative;
+    border-radius: 50%;
+    left:200px;
+    background: none;
+}
+.name
+{
+    color:rgb(20, 225, 225);
+    font-size: 50px;
+    background: none;
+}
+.second h1
+{
+    font-size: 35px;
+    color: ghostwhite;
+    background: none;
+}
+.main img
+{
+    width:200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    top:40px;
+    left:100px;
+}
+.main
+{
+    display: flex;
+    background: none;
+}
+.main p{
+    width:824px;
+    height:200px;
+    background: none;
+    font-size: 28px;
+    letter-spacing: 1.2px;
+    line-height: 38px;
+    position: relative;
+    left:175px;
+    top:60px;
+}
+.main span{
+    background: none;
+    color: rgb(20, 225, 225);
+}
+.main p{
+    background: none;
+}
+hr{
+    color: ghostwhite;
+    width: 1000px;
+    height: 0.1px;
+    background: ghostwhite;
+    position: relative;
+    left: 400px;
+    top:10px;
+}
+.info
+{
+    background: none;
+}
+.info p{
+    background: none;
+    width:800px;
+    height:300px;
+    color: ghostwhite;
+    position: relative;
+    left:600px;
+    top:80px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 38px;
+    word-spacing: 2px;
+}
+.third h1
+{
+    font-size: 35px;
+    color: ghostwhite;
+    background: none;
+}
+.boxes
+{
+    position: relative;
+    background: none;
+    display: flex;
+    top:80px;
+    justify-content: space-evenly;
+}
+.box
+{
+    height:400px;
+    width:300px;
+    background: none;
+    color: rgb(20, 225, 225);
+    border: 5px;
+    border-radius: 5%;
+    border-style:solid;
+    border-width: 2px;
+    position:relative;
+    align-items: center;
+}
+.box img{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    align-items: center;
+    left: 50px;
+    top: 50px ;
+}
+.box h1{
+    background: none;
+    font-size: 40px;
+    padding-top: 120px;
+    color: ghostwhite;
+    position: relative;
+    text-align:center;
+    top: -50px;
+    font-size: 50px;
+}
+.box h3{
+    background: none;
+    font-size: 40px;
+    padding-top: 120px;
+    color: ghostwhite;
+    position: relative;
+    text-align:center;
+    top: -50px;
+    font-size: 30px;
+}
+.box1
+{
+    color: rgb(20, 225, 225);
+    height:200px;
+    width:300px;
+    background: none;
+    border-color: rgb(20, 225, 225);
+    border: 5px;
+    border-radius: 5%;
+    border-style:solid;
+    border-width: 2px;
+    position:relative;
+    text-align: center;
+}
+.box1 h1{
+    justify-content: center;
+    align-items: center;
+    background: none;
+    font-size: 40px;
+    text-align: center;
+    padding: 60px;
+}
+.box1 h3{
+    background: none;
+    font-size: 40px;
+    padding-top: 120px;
+    color: ghostwhite;
+    position: relative;
+    text-align:center;
+    top: -50px;
+    font-size: 30px;
+}
+
+.fourth h1
+{
+    font-size: 35px;
+    color: ghostwhite;
+}
+.fifth h1
+{
+    font-size: 35px;
+    color: ghostwhite;
+}
+.con{
+    display: flex;
+}
+.details
+{
+    display:flex;
+    background: none;
+}
+.all-details
+{
+    background: none;
+}
+.icon
+{
+    background: none;
+}
+.icon img
+{
+    border-radius: 50%;
+    background: none;
+}
+.con{
+    display: flex;
+    background: none;
+}
+.text
+{
+    background:none;
+}
+.text p{
+    font-size: 20px;
+    letter-spacing: 2px;
+    background: none;
+}
+.text h1{
+    color: rgb(20, 225, 225);
+    background: none;
+    font-size: 30px;
+}
+.msg{
+    background: none;
+}
+
+.msg form
+{
+    border-style: double;
+    border-color:ghostwhite;
+    position:relative;
+    left:300px;
+    height: 520px;
+    width: 380px;
+    border-radius: 2%;
+    background: none;
+}
+.msg h1{
+    font-size: 40px;
+    background:transparent;
+    color: ghostwhite;
+    background: none;
+}
+.inputbox
+{
+    background: none;
+}
+.inputbox input
+{
+    background: transparent;
+    border-color: black;
+    height: 20px;
+    width: 250px;
+    color: ghostwhite;
+    background: none;
+}
+.txt
+{
+    background: transparent;
+    color: ghostwhite;
+    font-size: 25px;
+    background: none;
+}
+.inputbox textarea
+{
+    height:100px;
+    width:250px;
+    color: ghostwhite;
+    background: none;
+}
+.btn
+{
+    width: 150px;
+    height:50px;
+    border-color: white;
+    color: ghostwhite;
+    position: relative;
+    left: 200px;
+    background: none;
+}

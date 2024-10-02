@@ -1,0 +1,82 @@
+body
+{
+    width:100%;
+    height:100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(back.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+.loginbox
+{
+    width: 320px;
+    height: 420px;
+    background: #000;
+    background-color: white;
+    top:50%;
+    left:50%;
+    border-radius: 10%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.logo
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top:-50px;
+    left:calc(33%);
+}
+h1
+{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    color: rgb(79, 146,79);
+}
+.loginbox p
+{
+    margin: 0;
+    padding: 0;
+    color: rgb(79, 146, 79);
+    font-weight: bold;
+
+}
+.loginbox input
+{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"],input[type="password"]
+{
+    border:none;
+    border-bottom: 1px solid ;
+    background:  rgb(79, 146,79);
+    outline:none;
+    height: 50px;
+}
+input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgb(79, 146, 79);
+    font-size:18px;
+    border-radius: 20px;
+    color: azure;
+}
+::placeholder
+{
+    color: azure;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(79, 146, 79);
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3ff5d2e15e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="card">
+    <div class="search">
+        <input type="text" placeholder="Enter city name" spellcheck="false">
+        <div class="icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+
+    <div class="error">
+        <p>Invalid City Name </p>
+    </div>
+
+    <div class="weather">
+        <img src="clear.png" class="weather-icon">
+        <h1 class="temp"></h1>
+        <h6 class="city"></h6>
+        <div class="details">
+            <div class="col">
+                <img src="humidity.png" alt="">
+                <div>
+                    <p class="humidity"></p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="wind.png" alt="">
+                <div>
+                    <p class="wind">
+                         km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+        <canvas id="graph" width="600" height="400"></canvas>
+    </div>
+</div>
+
+<script>
+    const apikey = "9527cc54c898c48143407d26f3df2d42";
+    const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search .icon");
+    const weatherIcon = document.querySelector(".weather-icon");
+
+    async function checkWeather(city){
+        console.log(`Fetching weather for city: ${city}`);
+        const response = await fetch(apiUrl + city + `&appid=${apikey}`);
+        console.log(`Response status: ${response.status}`);
+        if(response.status == 404){
+            document.querySelector(".error").style.display = "block";
+            document.querySelector(".weather").style.display = "none";
+        } else {
+            const data = await response.json();
+            console.log(data);
+
+            document.querySelector(".city").textContent = data.name;
+            document.querySelector(".temp").textContent = Math.round(data.main.temp) + "°C";
+            document.querySelector(".humidity").textContent = data.main.humidity + "%";
+            document.querySelector(".wind").textContent = data.wind.speed + "km/h";
+
+            if(data.weather[0].main == "Clouds"){
+                weatherIcon.src = "clouds.png";
+            } else if(data.weather[0].main == "Clear"){
+                weatherIcon.src = "clear.png";
+            } else if(data.weather[0].main == "Rain"){
+                weatherIcon.src = "rain.png";
+            } else if(data.weather[0].main == "Drizzle"){
+                weatherIcon.src = "drizzle.png";
+            } else if(data.weather[0].main == "Mist"){
+                weatherIcon.src = "mist.png";
+            }
+
+            document.querySelector(".weather").style.display = "block";
+            document.querySelector(".error").style.display = "none";
+            return data;
+        }
+        drawgraph(data);
+    }
+    function drawgraph(data)
+    {
+        const ctx=document.getElementById('graph').getContext("2d");
+        const chart= new chart(ctx,{
+            type:"bar",
+            data:{
+                lables:["temperature","humidity","pressure"],
+                datasets:[{
+                    lable : "weatherinformation",
+                data:[
+                    data.main.temp,
+                    data.main.humidity,
+                    data.wind.speed
+                ],
+                backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                }]
+            },
+            options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+            }
+        });
+    }
+
+    searchBtn.addEventListener("click", ()=>{
+        const data =  checkWeather(searchBox.value);
+        drawgraph(data);
+    });
+
+    // Optional: Trigger weather check on pressing "Enter"
+    searchBox.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            const data =  checkWeather(searchBox.value);
+            drawgraph(data);
+        }
+    });
+</script>
+
+</body>
+</html>
